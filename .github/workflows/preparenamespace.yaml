@@ -5,6 +5,7 @@ jobs:
   CreateSecret:
     runs-on: runner-deployment 
     steps:
+      - uses: actions/checkout@v4
       # - run: |
       #     kubectl create secret generic pre-defined-secret \
       #     --namespace=arc-runners \
