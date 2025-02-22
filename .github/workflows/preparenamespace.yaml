@@ -11,6 +11,7 @@ jobs:
       #     --from-literal=github_app_id=${{ secrets.ARC_APP_ID }} \
       #     --from-literal=github_app_installation_id=${{ secrets.ARC_INSTALLATION_ID }} \
       #     --from-literal=github_app_private_key=${{ secrets.ARC_PRIVATE_KEY }}
+      - run: ls -ltrh
       - run: |
           INSTALLATION_NAME="arc-runner-set"
           NAMESPACE="arc-runners"
