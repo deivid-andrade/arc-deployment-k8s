@@ -17,6 +17,6 @@ jobs:
           helm install "${INSTALLATION_NAME}" \
           --namespace "${NAMESPACE}" \
           --create-namespace \
-          -f values.yaml \
+          -f inventories/values.yaml \
           oci://ghcr.io/actions/actions-runner-controller-charts/gha-runner-scale-set
 
