@@ -1,0 +1,16 @@
+name: 5 - UninstallRunners
+on:
+  workflow_dispatch:
+    inputs:
+      installation_name:
+        required: true
+      namespace:
+        required: true
+jobs:
+  Uninstall_Runners:
+    runs-on: runner-deployment 
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          helm uninstall ${{ inputs.installation_name }} \
+          --namespace ${{ inputs.namespace }} 
