@@ -51,6 +51,9 @@ githubConfigSecret: pre-defined-secret
 #     - example.com
 #     - example.org
 
+runner:
+  labels:
+    - "runner-ephemero"
 ## maxRunners is the max number of runners the autoscaling runner set will scale up to.
 maxRunners: 3
 
@@ -59,8 +62,6 @@ maxRunners: 3
 minRunners: 1
 
 # runnerGroup: "default"
-labels:
-  - teste-runner
 
 ## name of the runner scale set to create.  Defaults to the helm release name
 # runnerScaleSetName: ""

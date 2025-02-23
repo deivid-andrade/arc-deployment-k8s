@@ -1,4 +1,4 @@
-name: PrepareNamespaces
+name: HelmUpgrade
 on:
   workflow_dispatch:
 jobs:
