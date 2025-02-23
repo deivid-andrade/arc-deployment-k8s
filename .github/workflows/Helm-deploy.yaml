@@ -1,13 +1,20 @@
 name: HelmUpgrade
 on:
   workflow_dispatch:
+    inputs:
+      installation_name:
+        type: choice
+        options:
+        - default
+      message:
+        required: true
 jobs:
   Helm_upgrade:
     runs-on: runner-deployment 
     steps:
       - uses: actions/checkout@v4
       - run: |
-          helm upgrade --install "arc-runner-set" \
+          helm upgrade --install ${{ inputs.installation_name }} \
           --namespace "arc-runners" \
           -f inventories/values.yaml \
           oci://ghcr.io/actions/actions-runner-controller-charts/gha-runner-scale-set
