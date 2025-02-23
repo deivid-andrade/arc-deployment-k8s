@@ -2,11 +2,11 @@ name: HelmUpgrade
 on:
   workflow_dispatch:
     inputs:
-      installation_name:
+      name:
         type: choice
         options:
         - default
-      message:
+      installation_name:
         required: true
 jobs:
   Helm_upgrade:
