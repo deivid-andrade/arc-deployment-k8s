@@ -2,17 +2,10 @@ name: PrepareNamespaces
 on:
   workflow_dispatch:
 jobs:
-  CreateSecret:
+  Helm_upgrade:
     runs-on: runner-deployment 
     steps:
       - uses: actions/checkout@v4
-      - run: |
-          kubectl create secret generic pre-defined-secret \
-          --namespace=arc-runners \
-          --from-literal=github_app_id=${{ secrets.ARC_APP_ID }} \
-          --from-literal=github_app_installation_id=${{ secrets.ARC_INSTALLATION_ID }} \
-          --from-literal=github_app_private_key=${{ secrets.ARC_PRIVATE_KEY }}
-      - run: ls -ltrh
       - run: |
           helm upgrade "arc-runner-set" \
           --namespace "arc-runners" \
