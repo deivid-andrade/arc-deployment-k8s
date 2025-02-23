@@ -1,0 +1,17 @@
+name: CriarNamespaceRunners
+on:
+  workflow_dispatch:
+   inputs:
+      name:
+        type: choice
+        options:
+        - default
+      namespace:
+        required: true
+jobs:
+  CreateSecret:
+    runs-on: runner-deployment 
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          kubectl create namespace ${{ inputs.namespace }}

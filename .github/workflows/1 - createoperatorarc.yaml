@@ -1,0 +1,21 @@
+name: CriarOperator
+on:
+  workflow_dispatch:
+   inputs:
+      name:
+        type: choice
+        options:
+        - default
+      namespace:
+        required: true
+jobs:
+  CreateSecret:
+    runs-on: runner-deployment 
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          helm install arc \
+          --namespace ${{ inputs.namespace }} \
+          --create-namespace \
+          oci://ghcr.io/actions/actions-runner-controller-charts/gha-runner-scale-set-controller
+

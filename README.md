@@ -1,15 +1,10 @@
-
-Antes de rodar a CI criar o o operator actions runner controller e criar o GithubApp
-
-GithubApp
-https://docs.github.com/pt/actions/hosting-your-own-runners/managing-self-hosted-runners-with-actions-runner-controller/authenticating-to-the-github-api#deploying-using-personal-access-token-classic-authentication
-
-Create action runner controller
-NAMESPACE="arc-systems"
-helm install arc \
-    --namespace "${NAMESPACE}" \
-    --create-namespace \
-    oci://ghcr.io/actions/actions-runner-controller-charts/gha-runner-scale-set-controller
+1 - createoperatorarc.yaml
+2 - createnamespace.yaml
+3 - createsecret.yaml
+4 - deploy-runners.yaml
 
 
+Obs: o Step 1 para criar o operator só deve ser executada na primeira vez.
 
+
+Documentação oficial github: https://docs.github.com/en/actions/hosting-your-own-runners/managing-self-hosted-runners-with-actions-runner-controller/quickstart-for-actions-runner-controller
