@@ -5,7 +5,7 @@ on:
       namespace:
         required: true
 jobs:
-  CreateSecret:
+  CreateOperator:
     runs-on: runner-deployment 
     steps:
       - uses: actions/checkout@v4
